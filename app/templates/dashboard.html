@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vision X Industrial</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}">
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.27.2/axios.min.js" integrity="sha512-odNmoc1XJy5x1TMVMdC7EMs3IVdItLPlCeL5vSUPN2llYKMJ2eByTTAIiiuqLg+GdNr9hF6z81p27DArRFKT7A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</head>
+<body>
+    <div class="industrial-layout">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="logo-container">
+                <img src="{{ url_for('static', filename='vision_x.png') }}" alt="Vision X Logo" class="logo">
+            </div>
+            <nav class="nav">
+            <ul>
+                <li><a href="#" class="active" onclick="selectOption('Counting')">Counting</a></li>
+                <li><a href="#" onclick="selectOption('Defect Detection')">Defect Detection</a></li>
+                <li><a href="#" onclick="selectOption('Positioning')">Positioning</a></li>
+                <li><a href="#" onclick="selectOption('Assembly')">Assembly</a></li>
+            </ul>
+            </nav>
+
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Camera View -->
+            <section class="camera-view">
+                <img class="cameraFeed" src="{{ url_for('video_feed_cam1') }}" alt="vfeed"/>
+            </section>
+
+            <!-- Tab Content -->
+            <section id="counting" class="tab-content active">
+                <h2>Parts Count</h2>
+                <table id="countingTable">
+                    <tr>
+                        <th>Item Name</th>
+                        <th>Present</th>
+                        <th>Quantity</th>
+                    </tr>
+                    {% for item in countingTable %}
+                    <tr>
+                        <td>Part One</td>
+                        <td>Yes</td>
+                        <td>7</td>
+                    </tr>
+                    {% endfor %}
+                </table>
+                <button onclick="printCountingTable()">Print</button>
+            </section>
+
+
+            <section id="defect-detection" class="tab-content">
+                <h2>Result</h2>
+                <p>Defect Present</p>
+            </section>
+
+            <section id="positioning" class="tab-content">
+                <h2>Positioning</h2>
+                <p>Error Detected</p>
+            </section>
+
+            <section id="assembly" class="tab-content">
+                <h2>Assembly</h2>
+                <p>Assembly process details and monitoring data will be shown here.</p>
+            </section>
+
+        </main>
+    </div>
+
+    <script>
+        function showSection(sectionId) {
+            const sections = document.querySelectorAll('.tab-content');
+            sections.forEach(section => section.classList.remove('active'));
+            document.getElementById(sectionId).classList.add('active');
+        }
+
+        function selectOption(option) {
+            // Send post action on option selection
+            $.ajax({
+                type: 'POST',
+                url: '/',
+                data: { mode: option },
+                success: function (data) { console.log(data); },
+                error: function(error) { console.error('Error sending action:', error); }
+            });
+            const sectionMap = {
+                "Counting": "counting",
+                "Defect Detection": "defect-detection",
+                "Positioning": "positioning",
+                "Assembly": "assembly" // New Tab Mapping
+            };
+            // Highlight the selected tab
+            const tabs = document.querySelectorAll('.nav ul li a');
+            tabs.forEach(tab => tab.classList.remove('active'));
+
+            // Find and activate the clicked tab
+            const activeTab = [...tabs].find(tab => tab.textContent === option);
+            if (activeTab) {
+                activeTab.classList.add('active');
+            }
+
+            // Show the corresponding section
+            showSection(sectionMap[option]);
+
+        }
+
+
+        document.addEventListener('DOMContentLoaded', () => {
+        selectOption('Counting'); // Activate Counting tab on page load
+        });
+
+
+        function printCountingTable() {
+            const table = document.getElementById('countingTable').outerHTML;
+            const printWindow = window.open('', '', 'width=800,height=600');
+            printWindow.document.write('<html><head><title>Print Table</title></head><body>');
+            printWindow.document.write(table);
+            printWindow.document.write('</body></html>');
+            printWindow.document.close();
+            printWindow.print();
+        }
+
+        function getBOM() {
+            url = "/getBOM";
+            axios.get(url)
+            .then(function(response) {
+                //const table = document.getElementById('countingTable');
+                //countingTable.innerHTML = response.data
+                // The data will all be returned as a JSON object
+                // We can access the data by using the data property of the response object
+                //document.getElementById('randomNumberDiv').innerHTML = response.data.random_number;
+                //document.getElementById('doubleRandomNumberDiv').innerHTML = response.data.double_random_number;
+                //document.getElementById('serverTimeDiv').innerHTML = response.data.timestamp;
+                //document.getElementById('rawJsonDiv').innerHTML = JSON.stringify(response.data);
+                console.log(response.data);
+            })
+            .catch(function(error) {
+                console.log(error);
+            });
+        }
+
+        // This calls the function getRandomNumber() every 2 seconds
+        var intervalID = window.setInterval(getBOM, 200);
+    </script>
+</body>
+</html>

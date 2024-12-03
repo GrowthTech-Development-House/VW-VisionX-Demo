@@ -1,0 +1,65 @@
+2024-12-03 11:38:48.725127: An error occurred: 'NoneType' object has no attribute 'camera_status'
+2024-12-03 11:42:52.395355: An error occurred: 'NoneType' object has no attribute 'camera_status'
+2024-12-03 12:18:53.587334: An error occurred: 'NoneType' object has no attribute 'camera_status'
+2024-12-03 13:11:49.988020: An error occurred: ufunc 'add' did not contain a loop with signature matching types (dtype('S37'), dtype('uint8')) -> None
+2024-12-03 18:26:29.353504: 'generator' object has no attribute 'plot' - Line Number: 9 - File: C:\Users\Engineer\Documents\Projects\VW\Application\WebApp\app\controller\inspection_controller.py
+2024-12-03 18:26:29.354508: An error occurred: OpenCV(4.10.0) D:\a\opencv-python\opencv-python\opencv\modules\imgcodecs\src\loadsave.cpp:1134: error: (-215:Assertion failed) !image.empty() in function 'cv::imencode'
+
+2024-12-03 18:27:43.489010: Numpy is not available - Line Number: 9 - File: C:\Users\Engineer\Documents\Projects\VW\Application\WebApp\app\controller\inspection_controller.py
+2024-12-03 18:27:43.489010: An error occurred: OpenCV(4.10.0) D:\a\opencv-python\opencv-python\opencv\modules\imgcodecs\src\loadsave.cpp:1134: error: (-215:Assertion failed) !image.empty() in function 'cv::imencode'
+
+2024-12-03 18:38:52.920290: Numpy is not available - Line Number: 9 - File: C:\Users\Engineer\Documents\Projects\VW\Application\WebApp\app\controller\inspection_controller.py
+2024-12-03 18:38:52.924523: An error occurred: OpenCV(4.10.0) D:\repos\opencv\opencv-python\opencv\modules\imgcodecs\src\loadsave.cpp:1134: error: (-215:Assertion failed) !image.empty() in function 'cv::imencode'
+
+2024-12-03 18:45:20.717527: An error occurred: OpenCV(4.10.0) D:\repos\opencv\opencv-python\opencv\modules\imgcodecs\src\loadsave.cpp:1134: error: (-215:Assertion failed) !image.empty() in function 'cv::imencode'
+
+2024-12-03 18:47:32.399408: An error occurred: OpenCV(4.10.0) D:\repos\opencv\opencv-python\opencv\modules\imgcodecs\src\loadsave.cpp:1134: error: (-215:Assertion failed) !image.empty() in function 'cv::imencode'
+
+2024-12-03 18:48:12.049557: An error occurred: OpenCV(4.10.0) D:\repos\opencv\opencv-python\opencv\modules\imgcodecs\src\loadsave.cpp:1134: error: (-215:Assertion failed) !image.empty() in function 'cv::imencode'
+
+2024-12-03 18:48:13.766732: An error occurred: OpenCV(4.10.0) D:\repos\opencv\opencv-python\opencv\modules\imgcodecs\src\loadsave.cpp:1134: error: (-215:Assertion failed) !image.empty() in function 'cv::imencode'
+
+2024-12-03 18:53:34.404350: An error occurred: OpenCV(4.10.0) D:\repos\opencv\opencv-python\opencv\modules\imgcodecs\src\loadsave.cpp:1134: error: (-215:Assertion failed) !image.empty() in function 'cv::imencode'
+
+2024-12-03 20:42:11.782362: 'generator' object has no attribute 'names' - Line Number: 12 - File: C:\Users\Engineer\Documents\Projects\VW\Application\WebApp\app\controller\inspection_controller.py
+2024-12-03 20:42:11.785454: An error occurred: OpenCV(4.10.0) D:\repos\opencv\opencv-python\opencv\modules\imgcodecs\src\loadsave.cpp:1134: error: (-215:Assertion failed) !image.empty() in function 'cv::imencode'
+
+2024-12-03 20:42:38.901904: 'NoneType' object has no attribute 'plot' - Line Number: 17 - File: C:\Users\Engineer\Documents\Projects\VW\Application\WebApp\app\controller\inspection_controller.py
+2024-12-03 20:42:38.901904: An error occurred: OpenCV(4.10.0) D:\repos\opencv\opencv-python\opencv\modules\imgcodecs\src\loadsave.cpp:1134: error: (-215:Assertion failed) !image.empty() in function 'cv::imencode'
+
+2024-12-03 20:43:06.536333: 'NoneType' object has no attribute 'plot' - Line Number: 17 - File: C:\Users\Engineer\Documents\Projects\VW\Application\WebApp\app\controller\inspection_controller.py
+2024-12-03 20:43:06.537334: An error occurred: OpenCV(4.10.0) D:\repos\opencv\opencv-python\opencv\modules\imgcodecs\src\loadsave.cpp:1134: error: (-215:Assertion failed) !image.empty() in function 'cv::imencode'
+
+2024-12-03 21:49:10.223414: can only concatenate str (not "int") to str - Line Number: 18 - File: C:\Users\Engineer\Documents\Projects\VW\Application\WebApp\app\controller\inspection_controller.py
+2024-12-03 21:49:10.227412: An error occurred: OpenCV(4.10.0) D:\repos\opencv\opencv-python\opencv\modules\imgcodecs\src\loadsave.cpp:1134: error: (-215:Assertion failed) !image.empty() in function 'cv::imencode'
+
+2024-12-03 21:49:18.275397: can only concatenate str (not "int") to str - Line Number: 18 - File: C:\Users\Engineer\Documents\Projects\VW\Application\WebApp\app\controller\inspection_controller.py
+2024-12-03 21:49:18.276400: An error occurred: OpenCV(4.10.0) D:\repos\opencv\opencv-python\opencv\modules\imgcodecs\src\loadsave.cpp:1134: error: (-215:Assertion failed) !image.empty() in function 'cv::imencode'
+
+2024-12-03 21:49:31.645352: can only concatenate str (not "int") to str - Line Number: 18 - File: C:\Users\Engineer\Documents\Projects\VW\Application\WebApp\app\controller\inspection_controller.py
+2024-12-03 21:49:31.645352: An error occurred: OpenCV(4.10.0) D:\repos\opencv\opencv-python\opencv\modules\imgcodecs\src\loadsave.cpp:1134: error: (-215:Assertion failed) !image.empty() in function 'cv::imencode'
+
+2024-12-03 22:07:45.553472: list indices must be integers or slices, not str - Line Number: 18 - File: C:\Users\Engineer\Documents\Projects\VW\Application\WebApp\app\controller\inspection_controller.py
+2024-12-03 22:07:45.556543: An error occurred: OpenCV(4.10.0) D:\repos\opencv\opencv-python\opencv\modules\imgcodecs\src\loadsave.cpp:1134: error: (-215:Assertion failed) !image.empty() in function 'cv::imencode'
+
+2024-12-03 22:07:52.152169: list indices must be integers or slices, not str - Line Number: 18 - File: C:\Users\Engineer\Documents\Projects\VW\Application\WebApp\app\controller\inspection_controller.py
+2024-12-03 22:07:52.152169: An error occurred: OpenCV(4.10.0) D:\repos\opencv\opencv-python\opencv\modules\imgcodecs\src\loadsave.cpp:1134: error: (-215:Assertion failed) !image.empty() in function 'cv::imencode'
+
+2024-12-03 22:08:23.880270: list indices must be integers or slices, not str - Line Number: 18 - File: C:\Users\Engineer\Documents\Projects\VW\Application\WebApp\app\controller\inspection_controller.py
+2024-12-03 22:08:23.880270: An error occurred: OpenCV(4.10.0) D:\repos\opencv\opencv-python\opencv\modules\imgcodecs\src\loadsave.cpp:1134: error: (-215:Assertion failed) !image.empty() in function 'cv::imencode'
+
+2024-12-03 22:08:44.508535: list indices must be integers or slices, not str - Line Number: 18 - File: C:\Users\Engineer\Documents\Projects\VW\Application\WebApp\app\controller\inspection_controller.py
+2024-12-03 22:08:44.508535: An error occurred: OpenCV(4.10.0) D:\repos\opencv\opencv-python\opencv\modules\imgcodecs\src\loadsave.cpp:1134: error: (-215:Assertion failed) !image.empty() in function 'cv::imencode'
+
+2024-12-03 22:10:27.265709: list indices must be integers or slices, not str - Line Number: 17 - File: C:\Users\Engineer\Documents\Projects\VW\Application\WebApp\app\controller\inspection_controller.py
+2024-12-03 22:10:27.266705: An error occurred: OpenCV(4.10.0) D:\repos\opencv\opencv-python\opencv\modules\imgcodecs\src\loadsave.cpp:1134: error: (-215:Assertion failed) !image.empty() in function 'cv::imencode'
+
+2024-12-03 22:10:34.217521: list indices must be integers or slices, not str - Line Number: 17 - File: C:\Users\Engineer\Documents\Projects\VW\Application\WebApp\app\controller\inspection_controller.py
+2024-12-03 22:10:34.219064: An error occurred: OpenCV(4.10.0) D:\repos\opencv\opencv-python\opencv\modules\imgcodecs\src\loadsave.cpp:1134: error: (-215:Assertion failed) !image.empty() in function 'cv::imencode'
+
+2024-12-03 22:10:47.809869: list indices must be integers or slices, not str - Line Number: 17 - File: C:\Users\Engineer\Documents\Projects\VW\Application\WebApp\app\controller\inspection_controller.py
+2024-12-03 22:10:47.809869: An error occurred: OpenCV(4.10.0) D:\repos\opencv\opencv-python\opencv\modules\imgcodecs\src\loadsave.cpp:1134: error: (-215:Assertion failed) !image.empty() in function 'cv::imencode'
+
+2024-12-03 22:15:18.028665: list indices must be integers or slices, not str - Line Number: 18 - File: C:\Users\Engineer\Documents\Projects\VW\Application\WebApp\app\controller\inspection_controller.py
+2024-12-03 22:15:18.028665: An error occurred: OpenCV(4.10.0) D:\repos\opencv\opencv-python\opencv\modules\imgcodecs\src\loadsave.cpp:1134: error: (-215:Assertion failed) !image.empty() in function 'cv::imencode'
+
