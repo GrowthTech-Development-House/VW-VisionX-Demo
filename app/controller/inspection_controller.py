@@ -8,7 +8,7 @@ colors = {2: (0,0,0), 1: (255,255,255), 0: (255,0,0), 3: (0,255,0), 4: (0,0,255)
 def run_inspection(frame, globalV):
     try:
         if globalV.inspection_mode == 'Counting':
-            result = globalV.model_1.predict(frame, stream=True, verbose=False)
+            result = globalV.model_1.predict(frame, stream=True, verbose=False, iou=0.5)
             res = next(result, None)
             box = res.boxes
             boxes = box.xyxy
@@ -23,7 +23,7 @@ def run_inspection(frame, globalV):
             globalV.BOM = Counter(items)
             return frame
         elif globalV.inspection_mode == 'Defect Detection':
-            result = globalV.model_2.predict(frame, stream=True, verbose=False)
+            result = globalV.model_2.predict(frame, stream=True, verbose=False, iou=0.5)
             res = next(result, None)
             box = res.boxes
             boxes = box.xyxy
@@ -103,7 +103,7 @@ def annotate_image(item, cls, bx, frame):
         (int(x1), int(y1) - 5),
         font,
         0.7,
-        (255, 255, 255),
+        (0, 0, 0),
         1,
         cv2.LINE_AA)
 
