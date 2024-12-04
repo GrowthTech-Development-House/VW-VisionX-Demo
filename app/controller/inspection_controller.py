@@ -1,8 +1,9 @@
-import sys
+import sys, cv2
 import datetime as datetime
 from collections import Counter
 from tabnanny import verbose
 
+colors = {2: (0,0,0), 1: (255,255,255), 0: (255,0,0), 3: (0,255,0), 4: (0,0,255), 5: (255,255,0), 6: (0,255,255), 7: (255,0,255) }
 
 def run_inspection(frame, globalV):
     try:
@@ -10,23 +11,37 @@ def run_inspection(frame, globalV):
             result = globalV.model_1.predict(frame, stream=True, verbose=False)
             res = next(result, None)
             box = res.boxes
+            boxes = box.xyxy
             classes = box.cls
             class_names = res.names
             items = []
-            for cls in classes:
+            for cls, bx in zip(classes, boxes):
+                # Add detected item to list by class
                 item = class_names[int(cls)]
                 items.append(item)
+                annotate_image(item, cls, bx, frame)
             globalV.BOM = Counter(items)
-            return res.plot()
+            return frame
         elif globalV.inspection_mode == 'Defect Detection':
             result = globalV.model_2.predict(frame, stream=True, verbose=False)
-            return next(result, None).plot()
+            res = next(result, None)
+            box = res.boxes
+            boxes = box.xyxy
+            classes = box.cls
+            class_names = res.names
+            for cls, bx in zip(classes, boxes):
+                # Add detected item to list by class
+                item = class_names[int(cls)]
+                annotate_image(item, cls, bx, frame)
+            return frame
         elif globalV.inspection_mode == 'Positioning':
-            result = globalV.model_3.predict(frame, stream=True, verbose=False)
-            return next(result, None).plot()
+            # result = globalV.model_3.predict(frame, stream=True, verbose=False)
+            # return next(result, None).plot()
+            return frame
         elif globalV.inspection_mode == 'Assembly':
-            result = globalV.model_1.predict(frame, stream=True)
-            return next(result, None).plot()
+            # result = globalV.model_1.predict(frame, stream=True)
+            # return next(result, None).plot()
+            return frame
         else:
             return frame
 
@@ -65,4 +80,30 @@ def itemize(arr, names):
         counted[name] += 1
     print(f'Counted: {counted}')
     return counted
+
+def annotate_image(item, cls, bx, frame):
+    # Generate custom bounding boxes and put text on image
+    x1, y1, x2, y2 = bx
+    text = f'{item}'
+    font = cv2.FONT_HERSHEY_SIMPLEX
+    if int(cls) < colors.__len__():
+        color = colors.get(int(cls))
+    else:
+        color = (192, 192, 192)
+    cv2.rectangle(
+        img=frame,
+        pt1=(int(x1), int(y1)),
+        pt2=(int(x2), int(y2)),
+        color=color,
+        thickness=2
+    )
+    cv2.putText(
+        frame,
+        text,
+        (int(x1), int(y1) - 5),
+        font,
+        0.7,
+        (255, 255, 255),
+        1,
+        cv2.LINE_AA)
 

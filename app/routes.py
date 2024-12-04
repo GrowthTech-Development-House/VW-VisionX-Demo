@@ -9,7 +9,7 @@ def register_routes(app, globalV):
     def dashboard():
         if request.method == "POST":
             globalV.inspection_mode = request.form.get("mode")
-            print(f'Inspection action: {globalV.inspection_mode}')
+            print(f'Inspection Mode: {globalV.inspection_mode}')
 
         return render_template("dashboard.html", current_user=0)
 

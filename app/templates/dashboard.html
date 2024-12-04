@@ -6,8 +6,8 @@
     <title>Vision X Industrial</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
     <link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}">
-    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.27.2/axios.min.js" integrity="sha512-odNmoc1XJy5x1TMVMdC7EMs3IVdItLPlCeL5vSUPN2llYKMJ2eByTTAIiiuqLg+GdNr9hF6z81p27DArRFKT7A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="{{ url_for('static', filename='js/jquery-3.7.1.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/axios.min.js') }}" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </head>
 <body>
     <div class="industrial-layout">
@@ -51,18 +51,25 @@
 
 
             <section id="defect-detection" class="tab-content">
-                <h2>Result</h2>
-                <p>Defect Present</p>
+                <h2>Defect Detection</h2>
+                <!--<p>Defect Present</p>-->
             </section>
 
             <section id="positioning" class="tab-content">
                 <h2>Positioning</h2>
-                <p>Error Detected</p>
+                <p>Correct placement instruction and guided assistance. Refer to below video for complete process. Begin by placing shaft in view.</p>
+                <video width="100%" loop autoplay muted>
+                    <source src="{{ url_for('static', filename='Positioning_Forward.mp4') }}" type="video/mp4"/>
+                </video>
+                <!--<p>Error Detected</p>-->
             </section>
 
             <section id="assembly" class="tab-content">
                 <h2>Assembly</h2>
-                <p>Assembly process details and monitoring data will be shown here.</p>
+                <p>Augmented assembly process monitoring and guided assistance. Refer to below demonstration for complete process. Begin by placing microcontroller in view.</p>
+                 <video width="100%" loop autoplay muted>
+                    <source src="{{ url_for('static', filename='Assembly_Reverse.mp4') }}" type="video/mp4"/>
+                </video>
             </section>
 
         </main>
@@ -145,14 +152,14 @@
 
                 cTable.appendChild(tabBody);
 
-                console.log(arr);
+                //console.log(arr);
             })
             .catch(function(error) {
                 console.log(error);
             });
         }
         // This calls the function getBOM() every x milliseconds
-        var intervalID = window.setInterval(getBOM, 2000);
+        var intervalID = window.setInterval(getBOM, 1000);
     </script>
 </body>
 </html>

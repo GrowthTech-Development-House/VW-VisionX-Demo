@@ -1,0 +1,30 @@
+2024-12-04 23:05:35.959531: 0 - Line Number: 29 - File: C:\Users\Engineer\Documents\GitHub\VW-VisionX-Demo\app\controller\inspection_controller.py
+2024-12-04 23:05:35.962316: An error occurred: OpenCV(4.10.0) D:\repos\opencv\opencv-python\opencv\modules\imgcodecs\src\loadsave.cpp:1134: error: (-215:Assertion failed) !image.empty() in function 'cv::imencode'
+
+2024-12-04 23:06:38.403970: 0 - Line Number: 29 - File: C:\Users\Engineer\Documents\GitHub\VW-VisionX-Demo\app\controller\inspection_controller.py
+2024-12-04 23:06:38.403970: An error occurred: OpenCV(4.10.0) D:\repos\opencv\opencv-python\opencv\modules\imgcodecs\src\loadsave.cpp:1134: error: (-215:Assertion failed) !image.empty() in function 'cv::imencode'
+
+2024-12-04 23:08:51.655698: 0 - Line Number: 30 - File: C:\Users\Engineer\Documents\GitHub\VW-VisionX-Demo\app\controller\inspection_controller.py
+2024-12-04 23:08:51.657174: An error occurred: OpenCV(4.10.0) D:\repos\opencv\opencv-python\opencv\modules\imgcodecs\src\loadsave.cpp:1134: error: (-215:Assertion failed) !image.empty() in function 'cv::imencode'
+
+2024-12-04 23:10:11.329274: 0 - Line Number: 31 - File: C:\Users\Engineer\Documents\GitHub\VW-VisionX-Demo\app\controller\inspection_controller.py
+2024-12-04 23:10:11.329274: An error occurred: OpenCV(4.10.0) D:\repos\opencv\opencv-python\opencv\modules\imgcodecs\src\loadsave.cpp:1134: error: (-215:Assertion failed) !image.empty() in function 'cv::imencode'
+
+2024-12-04 23:13:34.371626: 0 - Line Number: 30 - File: C:\Users\Engineer\Documents\GitHub\VW-VisionX-Demo\app\controller\inspection_controller.py
+2024-12-04 23:13:34.371626: An error occurred: OpenCV(4.10.0) D:\repos\opencv\opencv-python\opencv\modules\imgcodecs\src\loadsave.cpp:1134: error: (-215:Assertion failed) !image.empty() in function 'cv::imencode'
+
+2024-12-04 23:14:26.736584: 0 - Line Number: 30 - File: C:\Users\Engineer\Documents\GitHub\VW-VisionX-Demo\app\controller\inspection_controller.py
+2024-12-04 23:14:26.736584: An error occurred: OpenCV(4.10.0) D:\repos\opencv\opencv-python\opencv\modules\imgcodecs\src\loadsave.cpp:1134: error: (-215:Assertion failed) !image.empty() in function 'cv::imencode'
+
+2024-12-04 23:19:22.251325: 0 - Line Number: 32 - File: C:\Users\Engineer\Documents\GitHub\VW-VisionX-Demo\app\controller\inspection_controller.py
+2024-12-04 23:19:22.251325: An error occurred: OpenCV(4.10.0) D:\repos\opencv\opencv-python\opencv\modules\imgcodecs\src\loadsave.cpp:1134: error: (-215:Assertion failed) !image.empty() in function 'cv::imencode'
+
+2024-12-04 23:29:56.635080: OpenCV(4.10.0) :-1: error: (-5:Bad argument) in function 'rectangle'
+> Overload resolution failed:
+>  - Can't parse 'pt1'. Sequence item with index 0 has a wrong type
+>  - Can't parse 'pt1'. Sequence item with index 0 has a wrong type
+>  - rectangle() missing required argument 'rec' (pos 2)
+>  - rectangle() missing required argument 'rec' (pos 2)
+ - Line Number: 36 - File: C:\Users\Engineer\Documents\GitHub\VW-VisionX-Demo\app\controller\inspection_controller.py
+2024-12-04 23:29:56.639078: An error occurred: OpenCV(4.10.0) D:\repos\opencv\opencv-python\opencv\modules\imgcodecs\src\loadsave.cpp:1134: error: (-215:Assertion failed) !image.empty() in function 'cv::imencode'
+

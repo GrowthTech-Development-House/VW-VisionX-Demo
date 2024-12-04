@@ -1,0 +1,6 @@
+2024-12-05 00:03:20.000726: annotate_image() missing 2 required positional arguments: 'cls' and 'frame' - Line Number: 13 - File: C:\Users\Engineer\Documents\GitHub\VW-VisionX-Demo\app\controller\inspection_controller.py
+2024-12-05 00:03:20.000726: An error occurred: OpenCV(4.10.0) D:\repos\opencv\opencv-python\opencv\modules\imgcodecs\src\loadsave.cpp:1134: error: (-215:Assertion failed) !image.empty() in function 'cv::imencode'
+
+2024-12-05 00:06:55.264223: name 'bx' is not defined - Line Number: 22 - File: C:\Users\Engineer\Documents\GitHub\VW-VisionX-Demo\app\controller\inspection_controller.py
+2024-12-05 00:06:55.265222: An error occurred: OpenCV(4.10.0) D:\repos\opencv\opencv-python\opencv\modules\imgcodecs\src\loadsave.cpp:1134: error: (-215:Assertion failed) !image.empty() in function 'cv::imencode'
+
