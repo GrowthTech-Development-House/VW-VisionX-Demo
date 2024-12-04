@@ -27,16 +27,4 @@ def register_routes(app, globalV):
 
     @app.route('/getBOM')
     def getBOM():
-        print(f'BOM: {globalV.BOM}')
-        # BOM = countedBOM(globalV.BOM)
-        random_number = 1
-        double_random_number = random_number * 2
-        timestamp = 'Abacus'
-
-        dictionary_to_return = {
-            'random_number': random_number,
-            'double_random_number': double_random_number,
-            'timestamp': timestamp
-        }
-
         return jsonify(globalV.BOM)

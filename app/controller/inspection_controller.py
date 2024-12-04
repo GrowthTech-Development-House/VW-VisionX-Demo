@@ -1,11 +1,11 @@
 import sys
 import datetime as datetime
-from collections import defaultdict
+from collections import Counter
 
 def run_inspection(frame, globalV):
     try:
         if globalV.inspection_mode == 'Counting':
-            result = globalV.model_1.predict(frame, stream=True)
+            result = globalV.model_1.predict(frame, stream=True, verbose=False)
             res = next(result, None)
             box = res.boxes
             classes = box.cls
@@ -14,7 +14,7 @@ def run_inspection(frame, globalV):
             for cls in classes:
                 item = class_names[int(cls)]
                 items.append(item)
-            globalV.BOM = items
+            globalV.BOM = Counter(items)
             return res.plot()
         elif globalV.inspection_mode == 'Defect Detection':
             result = globalV.model_1.predict(frame, stream=True)

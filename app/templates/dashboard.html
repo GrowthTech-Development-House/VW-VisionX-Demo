@@ -39,18 +39,12 @@
             <section id="counting" class="tab-content active">
                 <h2>Parts Count</h2>
                 <table id="countingTable">
-                    <tr>
-                        <th>Item Name</th>
-                        <th>Present</th>
-                        <th>Quantity</th>
-                    </tr>
-                    {% for item in countingTable %}
-                    <tr>
-                        <td>Part One</td>
-                        <td>Yes</td>
-                        <td>7</td>
-                    </tr>
-                    {% endfor %}
+                    <thead>
+                        <tr>
+                            <th>Item Name</th>
+                            <th>Quantity</th>
+                        </tr>
+                    </thead>
                 </table>
                 <button onclick="printCountingTable()">Print</button>
             </section>
@@ -131,23 +125,34 @@
             url = "/getBOM";
             axios.get(url)
             .then(function(response) {
-                //const table = document.getElementById('countingTable');
-                //countingTable.innerHTML = response.data
-                // The data will all be returned as a JSON object
-                // We can access the data by using the data property of the response object
-                //document.getElementById('randomNumberDiv').innerHTML = response.data.random_number;
-                //document.getElementById('doubleRandomNumberDiv').innerHTML = response.data.double_random_number;
-                //document.getElementById('serverTimeDiv').innerHTML = response.data.timestamp;
-                //document.getElementById('rawJsonDiv').innerHTML = JSON.stringify(response.data);
-                console.log(response.data);
+                var cTable = document.getElementById('countingTable');
+                var tabBody = document.createElement("TBODY");
+                tabBody.setAttribute("id", "tabBody");
+                $("#tabBody").remove();
+                for (var key in response.data) {
+                    var tr = document.createElement("TR");
+                    tr.setAttribute("id", "subTr");
+                    tabBody.appendChild(tr);
+                    var td = document.createElement("TD");
+                    var txt = document.createTextNode(key);
+                    td.appendChild(txt);
+                    var td2 = document.createElement("TD");
+                    var txt2 = document.createTextNode(response.data[key]);
+                    td2.appendChild(txt2);
+                    tr.appendChild(td);
+                    tr.appendChild(td2);
+                }
+
+                cTable.appendChild(tabBody);
+
+                console.log(arr);
             })
             .catch(function(error) {
                 console.log(error);
             });
         }
-
-        // This calls the function getRandomNumber() every 2 seconds
-        var intervalID = window.setInterval(getBOM, 200);
+        // This calls the function getBOM() every x milliseconds
+        var intervalID = window.setInterval(getBOM, 2000);
     </script>
 </body>
 </html>
