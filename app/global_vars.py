@@ -33,7 +33,9 @@ class GlobalVars:
 
         # self.model_1 = YOLO("./model/label_line_model_1280_28112024.pt")
         # self.model_1.to(device=device)
-        self.model_1 = YOLO("yolo11n.pt", )
+        self.model_1 = YOLO("models/BOM_v1.pt")
+        self.model_2 = YOLO("models/Defect_v1.pt")
+        self.model_3 = YOLO("models/Position_v1.pt")
         print('models loaded')
 
         self.inspection_mode = 'Counting'

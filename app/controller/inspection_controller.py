@@ -1,6 +1,8 @@
 import sys
 import datetime as datetime
 from collections import Counter
+from tabnanny import verbose
+
 
 def run_inspection(frame, globalV):
     try:
@@ -17,10 +19,10 @@ def run_inspection(frame, globalV):
             globalV.BOM = Counter(items)
             return res.plot()
         elif globalV.inspection_mode == 'Defect Detection':
-            result = globalV.model_1.predict(frame, stream=True)
+            result = globalV.model_2.predict(frame, stream=True, verbose=False)
             return next(result, None).plot()
         elif globalV.inspection_mode == 'Positioning':
-            result = globalV.model_1.predict(frame, stream=True)
+            result = globalV.model_3.predict(frame, stream=True, verbose=False)
             return next(result, None).plot()
         elif globalV.inspection_mode == 'Assembly':
             result = globalV.model_1.predict(frame, stream=True)
